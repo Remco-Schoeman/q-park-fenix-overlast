@@ -23,9 +23,7 @@ package-lock.json
 .env*
 
 # Documentatie (publiek op GitHub, hoeft niet ook op de site)
-README.md
-DEPLOYMENT.md
-INSTRUCTIES.md
+*.md
 
 # OS-troep
 Thumbs.db
