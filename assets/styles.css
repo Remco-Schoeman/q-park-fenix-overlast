@@ -786,7 +786,7 @@ a:hover { color: var(--alarm); }
   padding-top: 0.2rem;
 }
 .contact__details dd { margin: 0; }
-.contact .btn { align-self: flex-start; }
+.contact .btn { align-self: flex-start; margin-top: auto; }
 
 .tips {
   max-width: var(--maxw);
