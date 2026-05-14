@@ -23,7 +23,10 @@
     var addr1Html = addr.line1 ? escapeHtml(addr.line1) : "<span class=\"placeholder\">[Straat en huisnummer]</span>";
     var addr2Html = addr.line2 ? escapeHtml(addr.line2) : "<span class=\"placeholder\">[Postcode] [Plaats]</span>";
     var emailHtml = p.email ? escapeHtml(p.email) : "<span class=\"placeholder\">[E-mailadres]</span>";
-    fromBlock.innerHTML = nameHtml + "<br />" + addr1Html + "<br />" + addr2Html + "<br />" + emailHtml;
+    var html = nameHtml + "<br />" + addr1Html + "<br />" + addr2Html + "<br />";
+    if (p.telefoon) html += escapeHtml(p.telefoon) + "<br />";
+    html += emailHtml;
+    fromBlock.innerHTML = html;
   }
 
   function fillTemplate(p) {
@@ -34,6 +37,11 @@
       var value = "";
       if (key === "naam") value = p.naam || "";
       else if (key === "adres-volledig") value = addressFull;
+      else if (key === "straat-huisnr") value = addr.line1;
+      else if (key === "postcode") value = p.postcode || "";
+      else if (key === "plaats") value = p.plaats || "";
+      else if (key === "email") value = p.email || "";
+      else if (key === "telefoon") value = p.telefoon || "";
       if (value) {
         node.textContent = value;
         node.classList.remove("is-empty");
@@ -153,6 +161,7 @@
 
   global.BuurtTemplates = {
     renderQpark: function () { renderFor("klantenservice@q-park.nl"); },
-    renderDcmr:  function () { renderFor("meldkamer@dcmr.nl"); }
+    renderDcmr:  function () { renderFor("meldkamer@dcmr.nl"); },
+    renderMvgm:  function () { renderFor("supportwonen.rotterdam@mvgm.nl"); }
   };
 })(window);

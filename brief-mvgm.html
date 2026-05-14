@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Klachtbrief MVGM &middot; Q-Park Actie Nu!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="page-letter">
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="masthead__inner">
+      <div class="masthead__brand">
+        <span class="stamp">Buurt&shy;dossier</span>
+        <span class="masthead__title">Q-Park Actie Nu!</span>
+      </div>
+      <nav class="masthead__nav">
+        <a href="index.html">Het probleem</a>
+        <a href="acties.html">Acties</a>
+        <a href="dagboek.html">Dagboek</a>
+        <a href="contacten.html">Contacten</a>
+        <a href="privacy.html">Colofon</a>
+      </nav>
+    </div>
+    <div class="masthead__rule" aria-hidden="true">
+      <span>Brief MVGM</span><span>MVGM Wonen &middot; Beheerkantoor Rotterdam</span><span id="today"></span>
+    </div>
+  </header>
+
+  <main class="letter">
+    <section class="letter__head">
+      <p class="kicker"><span class="dot"></span> Brief aan MVGM &middot; verhuurder</p>
+      <h1>Klachtbrief MVGM</h1>
+      <p class="lede">
+        Voor huurders met een huurcontract via MVGM Wonen. Deze brief vraagt MVGM
+        om als verhuurder druk uit te oefenen op Q-Park, zodat er op korte termijn
+        tijdelijke maatregelen komen tegen de overlast.
+      </p>
+      <p class="profile-warning" id="profile-warning" hidden>
+        Vul eerst je gegevens in op de <a href="acties.html">actiepagina</a>. Zonder die
+        gegevens blijven de plekken in de brief leeg.
+      </p>
+    </section>
+
+    <section class="letter__toolbar">
+      <div class="field field--full">
+        <label for="onderwerp">Onderwerp</label>
+        <input id="onderwerp" type="text" value="Ernstige geluidsoverlast woning &mdash; verzoek om actie verhuurder MVGM" />
+      </div>
+      <div class="letter__actions">
+        <a class="btn btn--primary" id="mailto-link" href="#" target="_blank" rel="noopener">Open in e-mailprogramma</a>
+        <button class="btn btn--ghost" id="copy-link" type="button">Kopieer hele brief</button>
+        <button class="btn btn--ghost" id="print-link" type="button">Afdrukken</button>
+        <span class="profile__status" id="letter-status" role="status" aria-live="polite"></span>
+      </div>
+    </section>
+
+    <article class="letter__paper" id="letter-paper">
+      <header class="letter__paperhead">
+        <div>
+          <span class="letter__from-label">Afzender</span>
+          <div class="letter__from" id="from-block">
+            <span class="placeholder">[Je naam]</span><br />
+            <span class="placeholder">[Straat en huisnummer]</span><br />
+            <span class="placeholder">[Postcode]</span> <span class="placeholder">[Plaats]</span><br />
+            <span class="placeholder">[E-mailadres]</span>
+          </div>
+        </div>
+        <div>
+          <span class="letter__from-label">Geadresseerde</span>
+          <div class="letter__to">
+            MVGM Wonen<br />
+            Beheerkantoor Rotterdam<br />
+            Afdeling Verhuur / Beheer<br />
+            supportwonen.rotterdam@mvgm.nl
+          </div>
+        </div>
+        <div class="letter__date">
+          <span class="letter__from-label">Datum</span>
+          <span id="letter-date"></span>
+        </div>
+      </header>
+
+      <div class="letter__body" id="letter-body">
+        <p><strong>Betreft:</strong> ernstige geluidsoverlast woning <span class="fill" data-fill="straat-huisnr">[Straat en huisnummer]</span> <span class="fill" data-fill="plaats">[Plaats]</span> &ndash; verzoek om actie verhuurder.</p>
+
+        <p>Geachte heer of mevrouw,</p>
+
+        <p>
+          Ik huur via MVGM de woning aan de
+          <span class="fill" data-fill="straat-huisnr">[Straat en huisnummer]</span>
+          te
+          <span class="fill" data-fill="plaats">[Plaats]</span>.
+          Ik meld een ernstig en aanhoudend overlast&shy;probleem en vraag MVGM om
+          hierin actie te ondernemen.
+        </p>
+
+        <p>
+          Sinds <strong>[datum]</strong> is een industri&euml;le ventilator van de parkeergarage
+          onder of naast het pand defect. Die ventilator draait dag en nacht met
+          zwaar, aanhoudend lawaai. In mijn woning is het geluid zo sterk dat ik
+          alleen met oordoppen kan slapen. Inmiddels heeft dat zijn weerslag op
+          mijn nachtrust.
+        </p>
+
+        <p>
+          De garage wordt ge&euml;xploiteerd door Q-Park. Ik heb daar contact mee
+          opgenomen. Het antwoord van de klantenservice is dat de vervangende
+          motor pas over circa twee maanden geleverd wordt en dat er tot die tijd
+          niets gebeurt &ndash; geen tijdelijke maatregelen, niets. Ik heb Q-Park
+          inmiddels schriftelijk in gebreke gesteld en ik dien een melding in bij
+          DCMR Milieudienst Rijnmond.
+        </p>
+
+        <p>
+          Als verhuurder bent u verplicht mij ongestoord woongenot te leveren.
+          Structurele geluidsoverlast van deze omvang raakt dat rechtstreeks.
+          Ik verzoek u daarom om als professionele partij druk uit te oefenen op
+          Q-Park en, voor zover van toepassing, op de eigenaar van het pand,
+          zodat er op korte termijn tijdelijke maatregelen komen en de overlast
+          stopt.
+        </p>
+
+        <p>
+          Graag verneem ik <strong>binnen 7 dagen</strong> wat MVGM in deze zaak
+          gaat doen. Ik houd een logboek bij van de tijdstippen en de duur van de
+          overlast en stel dat op verzoek beschikbaar. Mijn brief aan Q-Park kan
+          ik desgewenst meesturen.
+        </p>
+
+        <p>Met vriendelijke groet,</p>
+        <p class="signature"><span class="fill" data-fill="naam">[Je naam]</span></p>
+      </div>
+    </article>
+
+    <p class="letter__verstuur">
+      Verstuur per e-mail naar <a class="js-mailto-fill" href="mailto:supportwonen.rotterdam@mvgm.nl">supportwonen.rotterdam@mvgm.nl</a>, het beheerkantoor van MVGM voor de woningen rond Fenix. Pas vóór verzending de plek &laquo;[datum]&raquo; aan op de werkelijke startdatum van de overlast.
+    </p>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <span class="stamp">Buurt&shy;dossier</span>
+        <p>Een burgerinitiatief van bewoners rond de Veerlaan, Katendrecht.</p>
+      </div>
+      <nav>
+        <a href="privacy.html">Colofon &amp; privacy</a>
+        <a href="acties.html">Acties</a>
+        <a href="index.html">Het probleem</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/storage.js"></script>
+  <script src="assets/templates.js"></script>
+  <script src="assets/main.js"></script>
+  <script>BuurtTemplates.renderMvgm();</script>
+</body>
+</html>
