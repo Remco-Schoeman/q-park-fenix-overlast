@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Geluidsdagboek voor de buurt rond Q-Park Fenix. Alle waarnemingen blijven uitsluitend in jouw eigen browser." />
+  <meta name="robots" content="noindex" />
+  <title>Geluidsdagboek &middot; Genoeg is Genoeg</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="page-diary">
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="masthead__inner">
+      <div class="masthead__brand">
+        <span class="stamp">Buurt&shy;dossier</span>
+        <span class="masthead__title">Genoeg is&nbsp;Genoeg</span>
+      </div>
+      <nav class="masthead__nav" aria-label="Hoofdnavigatie">
+        <a href="index.html">Het probleem</a>
+        <a href="acties.html">Acties</a>
+        <a href="dagboek.html" aria-current="page">Dagboek</a>
+        <a href="contacten.html">Contacten</a>
+        <a href="privacy.html">Colofon</a>
+      </nav>
+    </div>
+    <div class="masthead__rule" aria-hidden="true">
+      <span>Dagboek</span><span>Eén regel per voorval</span><span id="today"></span>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <p class="kicker"><span class="dot"></span> Stap 3 &middot; Bewijs verzamelen</p>
+      <h1>Geluidsdagboek.</h1>
+      <p class="lede">
+        Eén regel per voorval, week na week. Datum, tijdvak, intensiteit, korte
+        notitie. Dit dagboek leeft uitsluitend in <strong>jouw eigen browser</strong>
+        &mdash; niets wordt naar onze server gestuurd. Bij vervolgbrieven of een
+        gesprek met DCMR kun je de hele lijst in één klik kopiëren of als
+        tekstbestand downloaden.
+      </p>
+      <p class="diary__counter" id="diary-counter" aria-live="polite">&mdash;</p>
+    </section>
+
+    <section class="diary">
+      <form id="diary-form" class="diary__form" novalidate>
+        <input type="hidden" name="id" value="" />
+
+        <div class="field field--date">
+          <label for="d-date">Datum</label>
+          <input id="d-date" name="date" type="date" required />
+        </div>
+        <div class="field field--time">
+          <label for="d-start">Begintijd <span class="muted">(optioneel)</span></label>
+          <input id="d-start" name="startTime" type="time" />
+        </div>
+        <div class="field field--time">
+          <label for="d-end">Eindtijd <span class="muted">(optioneel)</span></label>
+          <input id="d-end" name="endTime" type="time" />
+        </div>
+
+        <div class="field field--intensity">
+          <span class="field__label">Intensiteit</span>
+          <div class="intensity-radio" role="radiogroup" aria-label="Intensiteit van 1 tot 5">
+            <label><input type="radio" name="intensity" value="1" /><span>1</span><em>licht hoorbaar</em></label>
+            <label><input type="radio" name="intensity" value="2" /><span>2</span><em>storend</em></label>
+            <label><input type="radio" name="intensity" value="3" /><span>3</span><em>hinderlijk</em></label>
+            <label><input type="radio" name="intensity" value="4" /><span>4</span><em>ernstig</em></label>
+            <label><input type="radio" name="intensity" value="5" /><span>5</span><em>ondraaglijk</em></label>
+          </div>
+        </div>
+
+        <div class="field field--note">
+          <label for="d-note">Notitie <span class="muted">(optioneel)</span></label>
+          <textarea id="d-note" name="notitie" rows="2" placeholder="bv. laagfrequent gebrom, trillingen door de muur, kinderen wakker"></textarea>
+        </div>
+
+        <div class="diary__form-actions">
+          <button type="submit" class="btn btn--primary" id="diary-submit">Waarneming opslaan</button>
+          <button type="button" class="btn btn--ghost" id="diary-reset" hidden>Annuleer bewerking</button>
+          <span class="profile__status" id="diary-status" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+
+      <div class="diary__head">
+        <h2>Mijn waarnemingen</h2>
+        <div class="diary__actions">
+          <button class="btn btn--ghost btn--small" type="button" id="diary-copy">Kopieer als tekst</button>
+          <button class="btn btn--ghost btn--small" type="button" id="diary-download">Download .txt</button>
+          <button class="btn btn--ghost btn--small btn--danger" type="button" id="diary-clear">Wis dagboek</button>
+        </div>
+      </div>
+
+      <div id="diary-list" class="diary__list" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <span class="stamp">Buurt&shy;dossier</span>
+        <p>Een burgerinitiatief van bewoners rond de Veerlaan, Katendrecht.</p>
+      </div>
+      <nav aria-label="Voettekst">
+        <a href="privacy.html">Colofon &amp; privacy</a>
+        <a href="contacten.html">Contacten</a>
+        <a href="acties.html">Acties</a>
+        <a href="index.html">Het probleem</a>
+      </nav>
+    </div>
+    <p class="footer__sig">Wij zijn geen Q-Park, geen DCMR, geen MVGM. Wij zijn de buren.</p>
+  </footer>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/storage.js"></script>
+  <script src="assets/diary.js"></script>
+  <script src="assets/main.js"></script>
+</body>
+</html>

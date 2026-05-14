@@ -7,10 +7,11 @@ Een buurt-actiesite voor bewoners rond de Veerlaan in Rotterdam-Katendrecht, opg
 - **Landingspagina** met probleemschets, live teller en oproep om aan te sluiten.
 - **Aansluit-formulier**: alleen postcode + huisnummer worden op de server bewaard. Geen namen, e-mailadressen, telefoonnummers, IP-adressen, cookies, analytics.
 - **Persoonlijke gegevens** (naam, adres, e-mail) blijven uitsluitend in `localStorage` van de eigen browser en worden lokaal gebruikt om de brieven automatisch in te vullen.
-- **Drie acties**:
+- **Vier sporen**:
   1. **Klachtbrief Q-Park** (`brief-qpark.html`) — vooraf opgesteld, vul-en-verstuur.
   2. **Klachtmelding DCMR** (`brief-dcmr.html`) — handhavings­verzoek bij DCMR Milieudienst Rijnmond.
   3. **Contacten** (`contacten.html`) — klantenservice Q-Park, MVGM Wonen Rotterdam, DCMR melddesk.
+  4. **Geluidsdagboek** (`dagboek.html`) — datum, tijdvak, intensiteit en notitie per voorval; volledig in `localStorage`, met export als tekst of `.txt`-bestand.
 - **Colofon + privacy** (`privacy.html`) met zelf-verwijderknop (per verwijdertoken) en een knop om alle browser­gegevens te wissen.
 
 ## Architectuur
@@ -46,12 +47,14 @@ Geen frameworks, geen bundler, geen npm-build voor de site zelf. Eén `<script>`
 ├── brief-qpark.html        -- Brief A (Q-Park)
 ├── brief-dcmr.html         -- Brief B (DCMR)
 ├── contacten.html          -- Contactlijst
+├── dagboek.html            -- Geluidsdagboek (localStorage)
 ├── privacy.html            -- Colofon + AVG-knoppen
 ├── assets/
 │   ├── styles.css
 │   ├── config.js           -- BuurtConfig.apiBase (in te vullen na deploy)
-│   ├── storage.js          -- localStorage-helper
+│   ├── storage.js          -- localStorage-helper (profiel + token + dagboek)
 │   ├── main.js             -- counter / forms / privacy
+│   ├── diary.js            -- dagboek-logica
 │   └── templates.js        -- brieven-rendering
 ├── worker/
 │   ├── worker.js           -- API (Cloudflare Worker)
