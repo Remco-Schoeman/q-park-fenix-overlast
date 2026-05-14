@@ -1,4 +1,4 @@
-# Q-Park Fenix overlast — Genoeg is Genoeg
+# Q-Park Fenix overlast — Q-Park Actie Nu!
 
 Een buurt-actiesite voor bewoners rond de Veerlaan in Rotterdam-Katendrecht, opgezet om druk uit te oefenen op Q-Park inzake de geluidsoverlast die wordt veroorzaakt door een **defecte ventilator** in parkeergarage **Q-Park Fenix**. Q-Park geeft aan dat het vervangings­onderdeel pas medio juli wordt geleverd; de site vraagt Q-Park, DCMR en MVGM om interim-maatregelen binnen 7 dagen. De site is specifiek voor deze ene actie gebouwd — niet generiek, niet bedoeld voor andere buurtinitiatieven.
 
