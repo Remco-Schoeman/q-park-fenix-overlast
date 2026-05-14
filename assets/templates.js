@@ -86,12 +86,21 @@
     var copy = $("#copy-link");
     var print = $("#print-link");
     var onderwerp = $("#onderwerp");
+    var inlineMailtos = document.querySelectorAll(".js-mailto-fill");
 
-    function refreshMailto() {
-      if (!mailto) return;
+    function buildMailtoHref(forTo) {
       var subj = encodeURIComponent((onderwerp && onderwerp.value) || "");
       var body = encodeURIComponent(buildBody(profile()));
-      mailto.href = "mailto:" + encodeURIComponent(to) + "?subject=" + subj + "&body=" + body;
+      return "mailto:" + encodeURIComponent(forTo) + "?subject=" + subj + "&body=" + body;
+    }
+
+    function refreshMailto() {
+      if (mailto) mailto.href = buildMailtoHref(to);
+      for (var i = 0; i < inlineMailtos.length; i++) {
+        var el = inlineMailtos[i];
+        var recipient = el.getAttribute("data-to") || to;
+        el.href = buildMailtoHref(recipient);
+      }
     }
     refreshMailto();
     if (onderwerp) onderwerp.addEventListener("input", refreshMailto);
