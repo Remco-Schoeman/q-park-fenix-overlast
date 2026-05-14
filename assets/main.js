@@ -238,6 +238,24 @@
   }
 
   /* -----------------------------------------------------------
+     Obfuscated mailto's
+     Bouwt op runtime mailto:-links uit losse data-user / data-domain
+     attributen, zodat spam-scrapers het volledige adres niet uit de
+     ruwe HTML-bron kunnen plukken.
+     ----------------------------------------------------------- */
+  function wireObfuscatedEmails() {
+    Array.prototype.forEach.call(document.querySelectorAll(".js-email"), function (el) {
+      var user = el.getAttribute("data-user");
+      var domain = el.getAttribute("data-domain");
+      if (!user || !domain) return;
+      var email = user + "@" + domain;
+      el.href = "mailto:" + email;
+      el.textContent = email;
+      el.classList.remove("js-email--placeholder");
+    });
+  }
+
+  /* -----------------------------------------------------------
      Boot
      ----------------------------------------------------------- */
   document.addEventListener("DOMContentLoaded", function () {
@@ -246,5 +264,6 @@
     wireSignup();
     wireProfile();
     wirePrivacy();
+    wireObfuscatedEmails();
   });
 })();
