@@ -1,8 +1,8 @@
 {
-  "name": "q-park-overlast-api",
+  "name": "q-park-fenix-overlast",
   "version": "1.0.0",
   "private": true,
-  "description": "Cloudflare Worker + D1 voor het aansluit-endpoint van de Q-Park Fenix overlast-actie.",
+  "description": "Buurtactie-site tegen geluidsoverlast van een defecte ventilator in Q-Park Fenix, Veerlaan Rotterdam.",
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",

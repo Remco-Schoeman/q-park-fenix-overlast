@@ -65,12 +65,6 @@
     var sub = $("#counter-sub");
     if (!el) return;
 
-    if (!API_BASE) {
-      el.textContent = "—";
-      if (sub) sub.textContent = "Backend nog niet geconfigureerd.";
-      return;
-    }
-
     fetch(API_BASE + "/api/count", { headers: { "Accept": "application/json" } })
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
       .then(function (data) {
@@ -120,11 +114,6 @@
       }
       if (!huisnummer) {
         setStatus(status, "Vul je huisnummer in.", "error");
-        return;
-      }
-
-      if (!API_BASE) {
-        setStatus(status, "Aansluiten kan zodra de beheerder de backend heeft geactiveerd.", "error");
         return;
       }
 
@@ -216,10 +205,6 @@
         var token = BuurtStorage.getDeleteToken();
         if (!token) {
           setStatus(deleteStatus, "Er staat in deze browser geen verwijdertoken. Sluit je niet eerder aan met deze browser, neem dan contact op via het e-mailadres in punt 06.", "error");
-          return;
-        }
-        if (!API_BASE) {
-          setStatus(deleteStatus, "Backend nog niet geconfigureerd. Neem contact op met de beheerder.", "error");
           return;
         }
         deleteBtn.disabled = true;

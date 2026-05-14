@@ -2,6 +2,8 @@
 
 Een buurt-actiesite voor bewoners rond de Veerlaan in Rotterdam-Katendrecht, opgezet om druk uit te oefenen op Q-Park inzake de geluidsoverlast die wordt veroorzaakt door een **defecte ventilator** in parkeergarage **Q-Park Fenix**. Q-Park geeft aan dat het vervangings­onderdeel pas medio juli wordt geleverd; de site vraagt Q-Park, DCMR en MVGM om interim-maatregelen binnen 7 dagen. De site is specifiek voor deze ene actie gebouwd — niet generiek, niet bedoeld voor andere buurtinitiatieven.
 
+Live: <https://q-park-fenix-overlast.remco-schoeman.workers.dev/>
+
 ## Wat de site doet
 
 - **Landingspagina** met probleemschets, live teller en oproep om aan te sluiten.
@@ -17,26 +19,34 @@ Een buurt-actiesite voor bewoners rond de Veerlaan in Rotterdam-Katendrecht, opg
 ## Architectuur
 
 ```
-+-----------------------------+        +--------------------------------+
-| Statische site              |        | Cloudflare Worker (API)        |
-| (HTML / CSS / vanilla JS)   | -----> | q-park-overlast-api            |
-| Cloudflare Pages of GitHub  |  CORS  | + Cloudflare D1                |
-| Pages — gratis              |        |   q-park-overlast-db           |
-|                             |        |                                |
-|                             |        | uitsluitend postcode +         |
-|                             |        | huisnummer worden opgeslagen   |
-+-----------------------------+        +--------------------------------+
+              +----------------------------------------------+
+              |  Cloudflare Worker: q-park-fenix-overlast    |
+              |                                              |
+              |  - statische assets (HTML/CSS/JS)            |
+              |  - /api/count, /api/register, /api/admin     |
+              |                                              |
+              |  Binding: ASSETS (statische bestanden)       |
+              |  Binding: DB    (D1: q-park-overlast-db)     |
+              |  Secret:  ADMIN_KEY                          |
+              +----------------------------------------------+
+                              |
+                              | uitsluitend
+                              | postcode + huisnummer + tijd
+                              v
+                  +---------------------------+
+                  |  D1: q-park-overlast-db   |
+                  +---------------------------+
 ```
 
-Geen frameworks, geen bundler, geen npm-build voor de site zelf. Eén `<script>` per pagina.
+Eén Worker bedient zowel de statische pagina's als de API. Dezelfde origin, dus geen CORS-acrobatiek. Auto-deploy bij elke push naar `main` via de Cloudflare-Git-integratie.
 
 ## Cloudflare-resources
 
 | Onderdeel  | Naam                          |
 |------------|-------------------------------|
+| Worker     | `q-park-fenix-overlast`       |
 | D1-database | `q-park-overlast-db`         |
-| Worker     | `q-park-overlast-api`         |
-| Pages-project (suggestie) | `q-park-overlast` |
+| Worker-config | [wrangler.jsonc](wrangler.jsonc) |
 
 ## Bestandsstructuur
 
@@ -51,16 +61,16 @@ Geen frameworks, geen bundler, geen npm-build voor de site zelf. Eén `<script>`
 ├── privacy.html            -- Colofon + AVG-knoppen
 ├── assets/
 │   ├── styles.css
-│   ├── config.js           -- BuurtConfig.apiBase (in te vullen na deploy)
-│   ├── storage.js          -- localStorage-helper (profiel + token + dagboek)
+│   ├── config.js           -- BuurtConfig.apiBase ("" = same-origin)
+│   ├── storage.js          -- localStorage-helper
 │   ├── main.js             -- counter / forms / privacy
 │   ├── diary.js            -- dagboek-logica
 │   └── templates.js        -- brieven-rendering
-├── worker/
-│   ├── worker.js           -- API (Cloudflare Worker)
-│   ├── wrangler.toml       -- Worker-config (in te vullen: database_id)
-│   ├── schema.sql          -- D1 schema
-│   └── package.json        -- scripts: dev / deploy / db:create / db:apply
+├── src/
+│   └── index.js            -- Cloudflare Worker (API + assets fallback)
+├── schema.sql              -- D1-schema
+├── wrangler.jsonc          -- Worker-config (D1-blok uncommenten na setup)
+├── package.json            -- npm scripts (dev / deploy / db:apply / secret:admin)
 ├── DEPLOYMENT.md           -- Stap-voor-stap gratis hosting
 ├── INSTRUCTIES.md          -- Beknopte versie
 └── README.md
@@ -68,17 +78,23 @@ Geen frameworks, geen bundler, geen npm-build voor de site zelf. Eén `<script>`
 
 ## Lokaal draaien
 
-Een statische site werkt direct in de browser. Open `index.html` in een browser, of run een mini-webserver:
+Volledig lokaal (inclusief lokale D1-database):
 
 ```powershell
-# Python (komt op Windows mee in 3.x)
-python -m http.server 8080
-
-# of, met Node:
-npx serve .
+npm install
+npm run db:apply:local
+npm run dev
 ```
 
-De counter en het aanmeldformulier doen niets totdat `assets/config.js` is bijgewerkt met de URL van een gedeployde Worker. Zie [DEPLOYMENT.md](DEPLOYMENT.md).
+Wrangler serveert site én API op `http://localhost:8787`.
+
+Alleen de statische site, zonder de API:
+
+```powershell
+python -m http.server 8080
+```
+
+Open <http://localhost:8080/>. De counter geeft "—" omdat er geen Worker tussen zit.
 
 ## Privacy in één zin
 
