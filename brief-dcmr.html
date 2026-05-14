@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Klachtmelding DCMR &middot; Genoeg is Genoeg</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="page-letter">
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="masthead__inner">
+      <div class="masthead__brand">
+        <span class="stamp">Buurt&shy;dossier</span>
+        <span class="masthead__title">Genoeg is&nbsp;Genoeg</span>
+      </div>
+      <nav class="masthead__nav">
+        <a href="index.html">Het probleem</a>
+        <a href="acties.html">Acties</a>
+        <a href="contacten.html">Contacten</a>
+        <a href="privacy.html">Colofon</a>
+      </nav>
+    </div>
+    <div class="masthead__rule" aria-hidden="true">
+      <span>Brief B</span><span>DCMR Milieudienst Rijnmond</span><span id="today"></span>
+    </div>
+  </header>
+
+  <main class="letter">
+    <section class="letter__head">
+      <p class="kicker"><span class="dot"></span> Brief B &middot; Melding aan DCMR</p>
+      <h1>Klachtmelding DCMR</h1>
+      <p class="lede">
+        DCMR Milieudienst Rijnmond is de instantie die kan handhaven op
+        geluids&shy;overlast door bedrijven. Maak je melding via het officiële
+        meld&shy;formulier &mdash; en mail deze brief als aanvulling op je melding.
+      </p>
+      <p class="profile-warning" id="profile-warning" hidden>
+        Vul eerst je gegevens in op de <a href="acties.html">actiepagina</a>. Zonder die
+        gegevens blijven de plekken in de brief leeg.
+      </p>
+    </section>
+
+    <section class="letter__toolbar">
+      <div class="field field--full">
+        <label for="onderwerp">Onderwerp</label>
+        <input id="onderwerp" type="text" value="Aanvullende klacht: aanhoudende geluidsoverlast parkeergarage Q-Park Fenix, Veerlaan Rotterdam" />
+      </div>
+      <div class="letter__actions">
+        <a class="btn btn--primary" id="mailto-link" href="#" target="_blank" rel="noopener">Open in e-mailprogramma</a>
+        <button class="btn btn--ghost" id="copy-link" type="button">Kopieer hele brief</button>
+        <a class="btn btn--ghost" href="https://www.dcmr.nl/melden" target="_blank" rel="noopener">Open DCMR meldformulier</a>
+        <span class="profile__status" id="letter-status" role="status" aria-live="polite"></span>
+      </div>
+    </section>
+
+    <article class="letter__paper" id="letter-paper">
+      <header class="letter__paperhead">
+        <div>
+          <span class="letter__from-label">Afzender</span>
+          <div class="letter__from" id="from-block">
+            <span class="placeholder">[Je naam]</span><br />
+            <span class="placeholder">[Straat en huisnummer]</span><br />
+            <span class="placeholder">[Postcode]</span> <span class="placeholder">[Plaats]</span><br />
+            <span class="placeholder">[E-mailadres]</span>
+          </div>
+        </div>
+        <div>
+          <span class="letter__from-label">Geadresseerde</span>
+          <div class="letter__to">
+            DCMR Milieudienst Rijnmond<br />
+            Meld- en handhavings&shy;desk<br />
+            Parallelweg 1<br />
+            3112 NA Schiedam<br />
+            meldkamer@dcmr.nl
+          </div>
+        </div>
+        <div class="letter__date">
+          <span class="letter__from-label">Datum</span>
+          <span id="letter-date"></span>
+        </div>
+      </header>
+
+      <div class="letter__body" id="letter-body">
+        <p><strong>Betreft:</strong> Aanvullende klacht en handhavings&shy;verzoek inzake geluidsoverlast Q-Park Fenix, Veerlaan te Rotterdam.</p>
+
+        <p>Geachte heer, geachte mevrouw,</p>
+
+        <p>
+          Bij dezen dien ik formeel een klacht in over aanhoudende geluidsoverlast
+          veroorzaakt door de parkeergarage Q-Park Fenix aan de Veerlaan te
+          Rotterdam, geëxploiteerd door Q-Park Operations Nederland B.V. Ik woon op
+          <span class="fill" data-fill="adres-volledig">[Straat en huisnummer], [Postcode] [Plaats]</span>,
+          op korte afstand van de in- en uitritten en/of ventilatie&shy;openingen van
+          deze garage.
+        </p>
+
+        <p>
+          De overlast is structureel en bestaat uit dichtslaande portieren, claxons,
+          autoalarmen, optrekkende en remmende voertuigen, stemgeluid van gebruikers
+          en geluiden uit ventilatie- en in&shy;ritopeningen. De geluiden treden 24&nbsp;uur
+          per dag op, en zijn met name in de avond- en nachtelijke uren ernstig
+          verstorend voor de nachtrust en het woongenot.
+        </p>
+
+        <p>Ik verzoek DCMR Milieudienst Rijnmond:</p>
+        <ol>
+          <li>Deze melding op te nemen in het dossier en, indien aanwezig, te koppelen aan reeds bestaande klachten over dezelfde locatie;</li>
+          <li>Een geluidsmeting te laten uitvoeren bij de meest belaste woon&shy;gevels in de avond- en nachtperiode (19:00&ndash;07:00&nbsp;uur), op meerdere weekdagen en in het weekend;</li>
+          <li>Te toetsen of de bedrijfsvoering van Q-Park voldoet aan de geluids&shy;normen uit het Activiteitenbesluit milieubeheer en, indien daarvan sprake is, handhavend op te treden;</li>
+          <li>Q-Park aan te spreken op haar zorgplicht ten aanzien van omwonenden en haar tot maatregelen te bewegen op de korte termijn;</li>
+          <li>Mij schriftelijk een referentienummer toe te zenden en mij op de hoogte te houden van het verloop van het dossier.</li>
+        </ol>
+
+        <p>
+          Een afschrift van deze brief zend ik aan Q-Park Operations Nederland B.V.
+          en aan de gebouw&shy;beheerder. Ik treed graag in contact met uw inspecteur
+          en ben bereid op locatie aanvullende waarnemingen te bieden.
+        </p>
+
+        <p>
+          Ik zie uw bevestiging en verdere reactie met belangstelling tegemoet.
+        </p>
+
+        <p>Met vriendelijke groet,</p>
+        <p class="signature"><span class="fill" data-fill="naam">[Je naam]</span></p>
+      </div>
+    </article>
+
+    <p class="letter__verstuur">
+      Een melding doe je het snelst via het
+      <a href="https://www.dcmr.nl/melden" target="_blank" rel="noopener">officiële DCMR-meldformulier</a>.
+      Stuur deze brief óók per e-mail naar <a href="mailto:meldkamer@dcmr.nl">meldkamer@dcmr.nl</a> zodat hij in je dossier komt.
+    </p>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <span class="stamp">Buurt&shy;dossier</span>
+        <p>Een burgerinitiatief van bewoners rond de Veerlaan, Katendrecht.</p>
+      </div>
+      <nav>
+        <a href="privacy.html">Colofon &amp; privacy</a>
+        <a href="acties.html">Acties</a>
+        <a href="index.html">Het probleem</a>
+      </nav>
+    </div>
+    <p class="footer__sig">Wij zijn geen Q-Park, geen DCMR, geen MVGM. Wij zijn de buren.</p>
+  </footer>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/storage.js"></script>
+  <script src="assets/templates.js"></script>
+  <script src="assets/main.js"></script>
+  <script>BuurtTemplates.renderDcmr();</script>
+</body>
+</html>

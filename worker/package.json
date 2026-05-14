@@ -1,0 +1,17 @@
+{
+  "name": "buurtdossier-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cloudflare Worker + D1 for the Buurtdossier neighborhood signup.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create buurtdossier",
+    "db:apply": "wrangler d1 execute buurtdossier --file=./schema.sql --remote",
+    "db:apply:local": "wrangler d1 execute buurtdossier --file=./schema.sql --local",
+    "secret:admin": "wrangler secret put ADMIN_KEY"
+  },
+  "devDependencies": {
+    "wrangler": "^3.86.0"
+  }
+}

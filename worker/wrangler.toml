@@ -1,0 +1,22 @@
+name = "buurtdossier-api"
+main = "worker.js"
+compatibility_date = "2025-05-01"
+
+# Pas DEZE drie regels aan na het aanmaken van de D1 database
+# met:  npx wrangler d1 create buurtdossier
+# Wrangler print dan een database_id; plak die hieronder.
+[[d1_databases]]
+binding = "DB"
+database_name = "buurtdossier"
+database_id = "vervang-met-id-uit-wrangler-output"
+
+# CORS:
+# Zet ALLOWED_ORIGIN op de URL waar de site staat (zonder slash aan het eind).
+# Meerdere origins? Komma-gescheiden, bv. "https://buurt.nl,https://www.buurt.nl".
+# Wildcard "*" mag tijdens ontwikkeling, maar liever specifieker in productie.
+[vars]
+ALLOWED_ORIGIN = "*"
+
+# Admin key voor de /api/admin/list endpoint:
+#   npx wrangler secret put ADMIN_KEY
+# (Niet hier zetten — secrets horen niet in een config-file.)

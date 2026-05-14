@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Acties &middot; Genoeg is Genoeg</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="page-actions">
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="masthead__inner">
+      <div class="masthead__brand">
+        <span class="stamp">Buurt&shy;dossier</span>
+        <span class="masthead__title">Genoeg is&nbsp;Genoeg</span>
+      </div>
+      <nav class="masthead__nav">
+        <a href="index.html">Het probleem</a>
+        <a href="acties.html" aria-current="page">Acties</a>
+        <a href="contacten.html">Contacten</a>
+        <a href="privacy.html">Colofon</a>
+      </nav>
+    </div>
+    <div class="masthead__rule" aria-hidden="true">
+      <span>Editie I</span><span>Katendrecht &middot; Rotterdam</span><span id="today"></span>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <p class="kicker"><span class="dot"></span> Acties</p>
+      <h1>Vul één keer je gegevens in.<br />Verstuur drie brieven.</h1>
+      <p class="lede">
+        Je naam, adres en e-mailadres blijven uitsluitend in deze browser staan. Wij
+        slaan ze niet op. Je kunt ze op elk moment wissen via de knop onderaan deze
+        pagina of via het <a href="privacy.html">colofon</a>.
+      </p>
+    </section>
+
+    <section class="profile">
+      <form id="profile-form" class="profile__form" novalidate>
+        <div class="field">
+          <label for="p-naam">Volledige naam</label>
+          <input id="p-naam" name="naam" type="text" autocomplete="name" required placeholder="A. de Vries" />
+        </div>
+        <div class="field">
+          <label for="p-email">E-mailadres</label>
+          <input id="p-email" name="email" type="email" autocomplete="email" required placeholder="naam@voorbeeld.nl" />
+        </div>
+        <div class="field">
+          <label for="p-straat">Straat</label>
+          <input id="p-straat" name="straat" type="text" autocomplete="address-line1" required placeholder="Veerlaan" />
+        </div>
+        <div class="field field--narrow">
+          <label for="p-huisnummer">Huisnummer</label>
+          <input id="p-huisnummer" name="huisnummer" type="text" required placeholder="12B" />
+        </div>
+        <div class="field field--narrow">
+          <label for="p-postcode">Postcode</label>
+          <input id="p-postcode" name="postcode" type="text" required placeholder="3072 AS" />
+        </div>
+        <div class="field">
+          <label for="p-plaats">Plaats</label>
+          <input id="p-plaats" name="plaats" type="text" autocomplete="address-level2" value="Rotterdam" />
+        </div>
+        <div class="field field--full">
+          <label for="p-telefoon">Telefoon <span class="muted">(optioneel)</span></label>
+          <input id="p-telefoon" name="telefoon" type="tel" autocomplete="tel" placeholder="06 12 34 56 78" />
+        </div>
+        <div class="profile__actions">
+          <button type="submit" class="btn btn--primary">Opslaan in deze browser</button>
+          <button type="button" class="btn btn--ghost" id="profile-clear">Wissen</button>
+          <span class="profile__status" id="profile-status" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+    </section>
+
+    <section class="actions-grid">
+      <a class="card card--lg" href="brief-qpark.html">
+        <span class="card__num">A</span>
+        <h2>Klachtbrief Q-Park</h2>
+        <p>Een formele, schriftelijke klacht aan Q-Park Operations Nederland B.V. met verzoek tot maatregelen binnen redelijke termijn.</p>
+        <span class="card__meta">~&nbsp;5 minuten &middot; e-mail of post</span>
+      </a>
+      <a class="card card--lg" href="brief-dcmr.html">
+        <span class="card__num">B</span>
+        <h2>Klachtmelding DCMR</h2>
+        <p>Officiële melding bij DCMR Milieudienst Rijnmond. Hoe meer meldingen, hoe sterker de basis voor handhaving.</p>
+        <span class="card__meta">~&nbsp;5 minuten &middot; meldformulier of e-mail</span>
+      </a>
+      <a class="card card--lg" href="contacten.html">
+        <span class="card__num">C</span>
+        <h2>Contact&shy;formulieren</h2>
+        <p>Klantenservice Q-Park, MVGM Wonen en DCMR. Direct doorklikken naar de juiste pagina&rsquo;s.</p>
+        <span class="card__meta">~&nbsp;3 minuten per kanaal</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <span class="stamp">Buurt&shy;dossier</span>
+        <p>Een burgerinitiatief van bewoners rond de Veerlaan, Katendrecht.</p>
+      </div>
+      <nav>
+        <a href="privacy.html">Colofon &amp; privacy</a>
+        <a href="contacten.html">Contacten</a>
+        <a href="index.html">Het probleem</a>
+      </nav>
+    </div>
+    <p class="footer__sig">Wij zijn geen Q-Park, geen DCMR, geen MVGM. Wij zijn de buren.</p>
+  </footer>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/storage.js"></script>
+  <script src="assets/main.js"></script>
+</body>
+</html>

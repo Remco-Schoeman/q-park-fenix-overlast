@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Colofon &amp; privacy &middot; Genoeg is Genoeg</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="page-privacy">
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="masthead__inner">
+      <div class="masthead__brand">
+        <span class="stamp">Buurt&shy;dossier</span>
+        <span class="masthead__title">Genoeg is&nbsp;Genoeg</span>
+      </div>
+      <nav class="masthead__nav">
+        <a href="index.html">Het probleem</a>
+        <a href="acties.html">Acties</a>
+        <a href="contacten.html">Contacten</a>
+        <a href="privacy.html" aria-current="page">Colofon</a>
+      </nav>
+    </div>
+    <div class="masthead__rule" aria-hidden="true">
+      <span>Colofon</span><span>Privacy &middot; aansprakelijkheid</span><span id="today"></span>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <p class="kicker"><span class="dot"></span> Colofon</p>
+      <h1>Hoe wij met je gegevens omgaan.</h1>
+      <p class="lede">
+        Deze website is opgezet om een buurt te mobiliseren. Niet om data te verzamelen,
+        niet om te adverteren, niet om door te verkopen. Hieronder leggen we precies uit
+        wat we wel en wat we niet bewaren.
+      </p>
+    </section>
+
+    <section class="prose">
+      <h2><span class="num">01</span> Wat slaan wij op &mdash; buiten je browser?</h2>
+      <p>
+        Wanneer je je aansluit via de knop &laquo;Sluit mij aan&raquo;, slaan wij op
+        onze server uitsluitend de volgende gegevens op:
+      </p>
+      <ul>
+        <li>Je <strong>postcode</strong>;</li>
+        <li>Je <strong>huisnummer</strong> (inclusief eventuele toevoeging);</li>
+        <li>Het tijdstip van aansluiting;</li>
+        <li>Een willekeurig <strong>verwijdertoken</strong>, zodat je je inzending zelf weer kunt wissen.</li>
+      </ul>
+      <p>
+        Geen naam, geen e-mailadres, geen telefoonnummer, geen IP-adres dat we langer
+        bewaren dan strikt nodig is voor het verzoek. Geen cookies van derden, geen
+        tracking, geen analytics.
+      </p>
+
+      <h2><span class="num">02</span> Wat blijft in jouw browser?</h2>
+      <p>
+        Op de actiepagina kun je je naam, adres, e-mailadres en eventueel
+        telefoonnummer invullen om de brieven automatisch te laten vullen. Die
+        gegevens worden uitsluitend opgeslagen in de <strong>localStorage</strong>
+        van je eigen browser. Ze worden nooit naar onze server verzonden. Ze blijven
+        op jouw apparaat staan totdat je ze zelf wist of je browser&shy;gegevens leegt.
+      </p>
+
+      <h2><span class="num">03</span> Verwijderen</h2>
+      <p>
+        Je kunt op elk moment je gegevens verwijderen.
+      </p>
+      <div class="prose__panel">
+        <h3>Verwijder je aansluiting (postcode + huisnummer)</h3>
+        <p>Hieronder zien we je verwijdertoken &mdash; dit hebben we lokaal voor je bewaard nadat je je had aangesloten:</p>
+        <p class="mono" id="delete-token-display">(geen aansluiting in deze browser gevonden)</p>
+        <button class="btn btn--primary" id="delete-registration" type="button">Verwijder mijn aansluiting</button>
+        <p class="profile__status" id="delete-status" role="status" aria-live="polite"></p>
+      </div>
+      <div class="prose__panel">
+        <h3>Wis alle browser&shy;gegevens van deze site</h3>
+        <p>Alle persoonlijke gegevens die je op de actiepagina hebt ingevuld, plus je verwijdertoken, worden in &eacute;&eacute;n klik gewist uit deze browser. De server&shy;inzending blijft staan totdat je hierboven op &laquo;Verwijder mijn aansluiting&raquo; klikt.</p>
+        <button class="btn btn--ghost" id="clear-local" type="button">Wis alle browser&shy;gegevens</button>
+        <p class="profile__status" id="clear-status" role="status" aria-live="polite"></p>
+      </div>
+
+      <h2><span class="num">04</span> Beveiliging</h2>
+      <p>
+        De server&shy;opslag wordt gehost via Cloudflare. Alle verkeer naar de site loopt
+        over HTTPS. Toegang tot de opslag is beperkt tot de beheerders van het
+        buurt&shy;initiatief, en uitsluitend voor het samenstellen van geanonimiseerde
+        overzichten (aantallen per straat) ten behoeve van Q-Park, DCMR en MVGM.
+      </p>
+
+      <h2><span class="num">05</span> Cookies en tracking</h2>
+      <p>
+        Wij plaatsen geen cookies. Wij gebruiken geen Google Analytics, geen
+        Facebook-pixel, geen advertentienetwerken. Wel verbindt je browser met
+        Google Fonts voor de typografie; je kunt dat blokkeren met een browser&shy;extensie
+        zonder dat de site stuk gaat.
+      </p>
+
+      <h2><span class="num">06</span> Verantwoordelijke en contact</h2>
+      <p>
+        Deze website is een burgerinitiatief van bewoners rond de Veerlaan in
+        Rotterdam-Katendrecht. Voor vragen over privacy, of om je gegevens met
+        de hand te laten verwijderen, mail naar
+        <a href="mailto:buurtdossier-fenix@proton.me">buurtdossier-fenix@proton.me</a>
+        <span class="muted">(vervang dit adres door je eigen contact&shy;adres voor publicatie)</span>.
+      </p>
+
+      <h2><span class="num">07</span> Aansprakelijkheid</h2>
+      <p>
+        De brieven en informatie op deze site zijn opgesteld op basis van openbare
+        bronnen en eigen waarnemingen. Wij streven naar zorgvuldigheid, maar staan
+        niet in voor de volledigheid of juistheid. De auteurs zijn niet
+        aansprakelijk voor enige schade die voortvloeit uit gebruik van deze site
+        of de brieven.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <span class="stamp">Buurt&shy;dossier</span>
+        <p>Een burgerinitiatief van bewoners rond de Veerlaan, Katendrecht.</p>
+      </div>
+      <nav>
+        <a href="acties.html">Acties</a>
+        <a href="contacten.html">Contacten</a>
+        <a href="index.html">Het probleem</a>
+      </nav>
+    </div>
+    <p class="footer__sig">Wij zijn geen Q-Park, geen DCMR, geen MVGM. Wij zijn de buren.</p>
+  </footer>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/storage.js"></script>
+  <script src="assets/main.js"></script>
+</body>
+</html>
