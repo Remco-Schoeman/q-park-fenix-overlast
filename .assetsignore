@@ -15,6 +15,7 @@ package.json
 package-lock.json
 .assetsignore
 .gitignore
+tropes.md
 
 # Lokale secrets / dev-vars (mochten ze ondanks gitignore toch op de buildhost staan)
 .dev.vars

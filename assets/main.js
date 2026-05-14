@@ -70,7 +70,7 @@
       .then(function (data) {
         var n = (data && typeof data.count === "number") ? data.count : 0;
         animateCounter(el, n);
-        if (sub) sub.textContent = "Tellen tot Q-Park luistert.";
+        if (sub) sub.textContent = "";
       })
       .catch(function () {
         el.textContent = "—";
