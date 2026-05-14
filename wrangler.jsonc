@@ -1,35 +1,43 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "q-park-fenix-overlast",
-  "main": "src/index.js",
-  "compatibility_date": "2026-05-14",
-  "compatibility_flags": ["nodejs_compat"],
-  "observability": {
-    "enabled": true
-  },
-  "assets": {
-    "directory": ".",
-    "binding": "ASSETS"
-  }
-
-  // ─────────────────────────────────────────────────────────────────
-  // D1-koppeling (aansluit-database q-park-overlast-db)
-  //
-  // Eenmalig in te schakelen NA `npx wrangler d1 create q-park-overlast-db`:
-  //   1. Plak de `database_id` uit de wrangler-uitvoer hieronder in.
-  //   2. Verwijder de // op de regels van het d1_databases-blok.
-  //   3. Voeg een komma toe achter de `}` van het assets-blok hierboven.
-  //   4. Push de wijziging — Cloudflare deployt automatisch en koppelt de D1.
-  //   5. Run het schema met `npm run db:apply`.
-  //
-  // Zonder dit blok werkt de site nog wél; alleen de /api/*-endpoints
-  // geven een nette 503-foutmelding terug.
-  //
-  // ,"d1_databases": [
-  //   {
-  //     "binding": "DB",
-  //     "database_name": "q-park-overlast-db",
-  //     "database_id": "VERVANG_ME_DOOR_HET_ID_UIT_WRANGLER"
-  //   }
-  // ]
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "q-park-fenix-overlast",
+	"main": "src/index.js",
+	"compatibility_date": "2026-05-14",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"observability": {
+		"enabled": true
+	},
+	"assets": {
+		"directory": ".",
+		"binding": "ASSETS"
+	},
+	"d1_databases": [
+		{
+			"binding": "q_park_overlast_db",
+			"database_name": "q-park-overlast-db",
+			"database_id": "21f59192-ee61-42b7-8559-1b9103cfa5dd"
+		}
+	]
+	// ─────────────────────────────────────────────────────────────────
+	// D1-koppeling (aansluit-database q-park-overlast-db)
+	//
+	// Eenmalig in te schakelen NA `npx wrangler d1 create q-park-overlast-db`:
+	//   1. Plak de `database_id` uit de wrangler-uitvoer hieronder in.
+	//   2. Verwijder de // op de regels van het d1_databases-blok.
+	//   3. Voeg een komma toe achter de `}` van het assets-blok hierboven.
+	//   4. Push de wijziging — Cloudflare deployt automatisch en koppelt de D1.
+	//   5. Run het schema met `npm run db:apply`.
+	//
+	// Zonder dit blok werkt de site nog wél; alleen de /api/*-endpoints
+	// geven een nette 503-foutmelding terug.
+	//
+	// ,"d1_databases": [
+	//   {
+	//     "binding": "DB",
+	//     "database_name": "q-park-overlast-db",
+	//     "database_id": "VERVANG_ME_DOOR_HET_ID_UIT_WRANGLER"
+	//   }
+	// ]
 }

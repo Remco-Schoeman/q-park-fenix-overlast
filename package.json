@@ -12,6 +12,6 @@
     "secret:admin": "wrangler secret put ADMIN_KEY"
   },
   "devDependencies": {
-    "wrangler": "^3.86.0"
+    "wrangler": "^4.91.0"
   }
 }
