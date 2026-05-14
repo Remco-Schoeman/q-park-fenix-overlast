@@ -876,20 +876,6 @@ a:hover { color: var(--alarm); }
   letter-spacing: 0.06em;
   font-size: 0.9rem;
 }
-.footer__sig {
-  max-width: var(--maxw);
-  margin: 2rem auto 0;
-  font-family: var(--font-display);
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: clamp(1.1rem, 2vw, 1.55rem);
-  border-top: 2px dashed var(--rule);
-  padding-top: 1.25rem;
-  text-align: center;
-  color: var(--ink-soft);
-}
-
 /* diary ===================================================== */
 .diary {
   max-width: var(--maxw);
