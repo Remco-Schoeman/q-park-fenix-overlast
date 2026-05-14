@@ -1,14 +1,14 @@
 {
-  "name": "buurtdossier-api",
+  "name": "q-park-overlast-api",
   "version": "1.0.0",
   "private": true,
-  "description": "Cloudflare Worker + D1 for the Buurtdossier neighborhood signup.",
+  "description": "Cloudflare Worker + D1 voor het aansluit-endpoint van de Q-Park Fenix overlast-actie.",
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "db:create": "wrangler d1 create buurtdossier",
-    "db:apply": "wrangler d1 execute buurtdossier --file=./schema.sql --remote",
-    "db:apply:local": "wrangler d1 execute buurtdossier --file=./schema.sql --local",
+    "db:create": "wrangler d1 create q-park-overlast-db",
+    "db:apply": "wrangler d1 execute q-park-overlast-db --file=./schema.sql --remote",
+    "db:apply:local": "wrangler d1 execute q-park-overlast-db --file=./schema.sql --local",
     "secret:admin": "wrangler secret put ADMIN_KEY"
   },
   "devDependencies": {

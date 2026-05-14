@@ -1,19 +1,19 @@
-name = "buurtdossier-api"
+name = "q-park-overlast-api"
 main = "worker.js"
 compatibility_date = "2025-05-01"
 
-# Pas DEZE drie regels aan na het aanmaken van de D1 database
-# met:  npx wrangler d1 create buurtdossier
+# De D1-database wordt aangemaakt met:
+#   npx wrangler d1 create q-park-overlast-db
 # Wrangler print dan een database_id; plak die hieronder.
 [[d1_databases]]
 binding = "DB"
-database_name = "buurtdossier"
+database_name = "q-park-overlast-db"
 database_id = "vervang-met-id-uit-wrangler-output"
 
 # CORS:
-# Zet ALLOWED_ORIGIN op de URL waar de site staat (zonder slash aan het eind).
-# Meerdere origins? Komma-gescheiden, bv. "https://buurt.nl,https://www.buurt.nl".
-# Wildcard "*" mag tijdens ontwikkeling, maar liever specifieker in productie.
+# Zet ALLOWED_ORIGIN op de URL waar de site staat (zonder slash aan het eind),
+# bv. "https://q-park-overlast.pages.dev" of het eigen domein.
+# Wildcard "*" mag tijdens ontwikkeling, maar wordt vervangen zodra de site live staat.
 [vars]
 ALLOWED_ORIGIN = "*"
 

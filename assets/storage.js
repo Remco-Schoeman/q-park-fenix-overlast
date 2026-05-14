@@ -1,10 +1,10 @@
-/* Buurtdossier — localStorage helper
+/* Q-Park Fenix overlast — localStorage helper.
    Houdt persoonsgegevens uitsluitend in deze browser. */
 (function (global) {
   "use strict";
 
-  var STORAGE_KEY = "buurtdossier:profile:v1";
-  var TOKEN_KEY = "buurtdossier:deletetoken:v1";
+  var STORAGE_KEY = "qpark-overlast:profile:v1";
+  var TOKEN_KEY = "qpark-overlast:deletetoken:v1";
 
   function safeParse(str) {
     try { return str ? JSON.parse(str) : null; } catch (e) { return null; }

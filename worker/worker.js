@@ -1,5 +1,5 @@
 /**
- * Buurtdossier — Cloudflare Worker API
+ * Q-Park Fenix overlast — Cloudflare Worker API
  *
  * Endpoints:
  *   GET    /api/count                    -> { count }
@@ -175,7 +175,7 @@ export default {
     }
 
     if (pathname === "/" || pathname === "/api") {
-      return json({ name: "buurtdossier-api", endpoints: ["/api/count", "/api/register", "/api/register/:token"] }, {}, request, env);
+      return json({ name: "q-park-overlast-api", endpoints: ["/api/count", "/api/register", "/api/register/:token"] }, {}, request, env);
     }
 
     return json({ error: "Niet gevonden." }, { status: 404 }, request, env);

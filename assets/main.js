@@ -1,4 +1,4 @@
-/* Buurtdossier — main behaviour
+/* Q-Park Fenix overlast — main behaviour
    - Live counter (signup count) via Cloudflare Worker, with graceful fallback
    - Postcode/huisnummer signup form
    - Personal profile form (localStorage only)

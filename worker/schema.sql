@@ -1,4 +1,4 @@
--- Buurtdossier — D1 schema
+-- Q-Park Fenix overlast — D1 schema
 -- Slaat uitsluitend postcode + huisnummer op, plus een tijdstip
 -- en een willekeurig verwijdertoken zodat een bewoner zijn
 -- inzending zelf weer kan wissen. Geen namen, e-mailadressen,
