@@ -1,0 +1,35 @@
+# .assetsignore — wat NIET als publieke statische asset op de Worker komt.
+# Gitignore-syntax. De directory voor assets is "." (de repo-root), dus we
+# moeten hier expliciet uitsluiten wat niet door bezoekers opvraagbaar mag zijn.
+
+# Build- en dependency-mappen
+node_modules/
+.wrangler/
+.git/
+
+# Bron en config (alleen voor maintainers, niet voor het publiek)
+src/
+schema.sql
+wrangler.jsonc
+package.json
+package-lock.json
+.assetsignore
+.gitignore
+
+# Lokale secrets / dev-vars (mochten ze ondanks gitignore toch op de buildhost staan)
+.dev.vars
+.dev.vars*
+.env
+.env*
+
+# Documentatie (publiek op GitHub, hoeft niet ook op de site)
+README.md
+DEPLOYMENT.md
+INSTRUCTIES.md
+
+# OS-troep
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
